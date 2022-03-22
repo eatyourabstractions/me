@@ -18,11 +18,12 @@ layout: main
     {% if site.show_hero and paginator == nil or paginator.page == 1 %}
         <!-- Hero -->
         {% assign featured = posts.first %}
-        <section class="hero" style="background-image: url({{ featured.image }})">
+        <!-- <section class="hero" style="background-image: url({{ featured.image }})"> -->
+            <section class="hero" style="background-image: url(https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559821647/theme6_qeeojf.jpg)">
             <div class="pixels"></div>
             <div class="gradient"></div>
             <div class="content">
-                <time datetime="{{ featured.date | date_to_xmlschema }}" class="date">
+                <!-- <time datetime="{{ featured.date | date_to_xmlschema }}" class="date">
                     {% if site.date_format == nil %}
                         {{ featured.date | date: "%m.%d.%Y" }}
                     {% else %}
@@ -36,13 +37,27 @@ layout: main
                         <svg><use xlink:href="#icon-read"></use></svg>
                         <span>{{ site.translations.button.read_now | default: "Read Now" }}</span>
                     </a>
+                </div> -->
+                <div style="display:flex; flex-direction: row;">
+                    <img src="assets/img/mike-avatar.jpg" class="avatar">
+                    <div style="margin-left: 20px;">
+                        <h1 class="title">Michael Matos</h1>
+                        <p class="description">
+                            I'm a full-stack web developer with a passion for making beautiful, functional, and responsive designs come true.
+                        </p>
+
+                    </div>
+                    
                 </div>
+
+           
             </div>
         </section>
     {% endif %}
     <!-- Posts -->
     <section id="grid" class="row flex-grid">
         {% for post in posts offset: offset %}
+        
             <article class="box-item">
                 <span class="category">
                     <a href="{{ site.baseurl }}/{{ site.categories_folder | default: 'category' }}/{{ post.category }}">
